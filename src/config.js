@@ -16,8 +16,8 @@ export const wxentInvite = {
 };
 
 export const inviteWxcfg = {
-  token: process.env.INVITE_WXE_TOKEN,
-  encodingAESKey: process.env.INVITE_WXE_AES_KEY,
+  token: process.env.INVITE_WXE_TOKEN || 'token',
+  encodingAESKey: process.env.INVITE_WXE_AES_KEY || 'T5xPBHxlYRrP7RnWV6mYSo4kBNhbXMV1UPGWY7KS42j',
   corpId: process.env.WXE_CORPID,
   secret: process.env.WXE_SECRET,
   agentId: process.env.INVITE_WXE_AGENTID || 5,
@@ -29,8 +29,8 @@ export const wxentSignin = {
 };
 
 export const signinWxcfg = {
-  token: process.env.SIGNIN_WXE_TOKEN,
-  encodingAESKey: process.env.SIGNIN_WXE_AES_KEY,
+  token: process.env.SIGNIN_WXE_TOKEN || 'token',
+  encodingAESKey: process.env.SIGNIN_WXE_AES_KEY || 'T5xPBHxlYRrP7RnWV6mYSo4kBNhbXMV1UPGWY7KS42j',
   corpId: process.env.WXE_CORPID,
   secret: process.env.WXE_SECRET,
   agentId: process.env.SIGNIN_WXE_AGENTID || 66,

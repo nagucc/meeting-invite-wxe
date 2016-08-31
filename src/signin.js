@@ -26,12 +26,12 @@ const handleEvent = eventHandlers =>
 const eventHandlers = {
   signin: (msg, req, res) => {
     const { FromUserName } = msg;
-    inviteApi.getUser(FromUserName, (err, user) => {
+    signinApi.getUser(FromUserName, (err, user) => {
       if (err || user.errcode !== 0) {
         res.reply(`[getUser]发生错误，请将错误代码发给管理员：${err}`);
       } else {
         const department = user.department.concat([2728]);
-        inviteApi.updateUser({
+        signinApi.updateUser({
           userid: user.userid,
           department,
         }, (err2, user2) => {
@@ -47,7 +47,7 @@ const eventHandlers = {
 };
 
 router.use('/',
-  wxent(inviteWxcfg, event(handleEvent(eventHandlers)))
+  wxent(signinWxcfg, event(handleEvent(eventHandlers)))
 );
 
 export default router;
