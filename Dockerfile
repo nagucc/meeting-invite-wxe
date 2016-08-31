@@ -1,4 +1,4 @@
-FROM node:5
+FROM library/node:5.12.0
 
 ADD *.json /rsk/
 ADD src /rsk/src
