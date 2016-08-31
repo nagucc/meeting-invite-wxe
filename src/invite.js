@@ -5,7 +5,7 @@ eslint-disable no-param-reassign
 import { Router } from 'express';
 import { SUCCESS, UNAUTHORIZED, UNKNOWN_ERROR,
   OBJECT_IS_NOT_FOUND, SERVER_FAILED } from 'nagu-validates';
-import { inviteApi, inviteWxcfg } from './config';
+import { signinApi, inviteWxcfg } from './config';
 import wxent, { event } from 'wechat-enterprise';
 
 const router = new Router();
@@ -26,12 +26,12 @@ const handleEvent = eventHandlers =>
 const eventHandlers = {
   invite: (msg, req, res) => {
     const { FromUserName } = msg;
-    inviteApi.getUser(FromUserName, (err, user) => {
+    signinApi.getUser(FromUserName, (err, user) => {
       if (err || user.errcode !== 0) {
         res.reply(`[getUser]发生错误，请将错误代码发给管理员：${err}`);
       } else {
         const department = user.department.concat([2728]);
-        inviteApi.updateUser({
+        signinApi.updateUser({
           userid: user.userid,
           department,
         }, (err2, user2) => {
