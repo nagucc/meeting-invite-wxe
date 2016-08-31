@@ -30,6 +30,8 @@
     "morgan": "^1.7.0",
     "nagu-validates": "0.0.3",
     "pretty-error": "^2.0.0",
+    "wechat-enterprise": "^0.1.1",
+    "wx-errmsg": "^1.0.1",
     "wxent-api-redis": "0.0.4"
   },
   "devDependencies": {

@@ -4,7 +4,7 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import PrettyError from 'pretty-error';
-import { port, auth, analytics, showLog } from './config';
+import { port } from './config';
 
 import invite from './invite';
 
