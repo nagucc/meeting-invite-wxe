@@ -12,7 +12,7 @@ export const redisConfig = {
 export const wxentInvite = {
   corpId: process.env.WXE_CORPID,
   secret: process.env.WXE_SECRET,
-  angetId: process.env.INVITE_WXE_AGENTID || 66,
+  angetId: process.env.INVITE_WXE_AGENTID || 5,
 };
 
 export const inviteWxcfg = {
@@ -20,7 +20,21 @@ export const inviteWxcfg = {
   encodingAESKey: process.env.INVITE_WXE_AES_KEY,
   corpId: process.env.WXE_CORPID,
   secret: process.env.WXE_SECRET,
-  agentId: process.env.INVITE_WXE_AGENTID || 66,
+  agentId: process.env.INVITE_WXE_AGENTID || 5,
 };
-export const inviteApi = API(wxentInvite.corpId, wxentInvite.secret,
-  wxentInvite.agentId, redisConfig.host, redisConfig.port);
+export const wxentSignin = {
+  corpId: process.env.WXE_CORPID,
+  secret: process.env.WXE_SECRET,
+  angetId: process.env.SIGNIN_WXE_AGENTID || 66,
+};
+
+export const signinWxcfg = {
+  token: process.env.SIGNIN_WXE_TOKEN,
+  encodingAESKey: process.env.SIGNIN_WXE_AES_KEY,
+  corpId: process.env.WXE_CORPID,
+  secret: process.env.WXE_SECRET,
+  agentId: process.env.SIGNIN_WXE_AGENTID || 66,
+};
+
+export const signinApi = API(wxentSignin.corpId, wxentSignin.secret,
+  wxentSignin.agentId, redisConfig.host, redisConfig.port);
